@@ -1,0 +1,46 @@
+<div id="register-view">
+    <form name="registerform">
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" name="firstname" ng-model="firstname" placeholder="Alex" required>
+        <p class="bg-danger" ng-show="registerform.firstname.$error.required && registerform.firstname.$touched">I need your name!</p>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" name="lastname" ng-model="lastname" placeholder="Lakatos" required>
+        <p class="bg-danger" ng-show="registerform.lastname.$error.required && registerform.lastname.$touched">I need your name!</p>
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" min="18" name="age" ng-model="age" placeholder="27" integer>
+        <p class="bg-danger" ng-show="registerform.age.$error.min">You are underaged. You need to be over 18!</p>
+        <p class="bg-danger" ng-show="registerform.age.$error.integer">You need to be integer</p>
+
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" name="email" ng-model="email" placeholder="alex.lakatos.qa@gmail.com">
+      </div>
+      <div class="form-group">
+        <label for="confirmemail">Confirm Email</label>
+        <input type="email" class="form-control" name="confirmemail" ng-model="confirmemail" placeholder="alex.lakatos.qa@gmail.com">
+        <p class="bg-danger" ng-show="registerform.email.$viewValue != registerform.confirmemail.$viewValue && registerform.confirmemail.$touched">Same emails please</p>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" ng-model="password" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+        <label for="confirmpassword">Confirm Password</label>
+        <input type="password" class="form-control" name="confirmpassword" ng-model="confirmpassword" placeholder="Password">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="developer"> I am a developer
+        </label>
+      </div>
+      <button type="submit" class="btn btn-default">Register</button>
+    </form>
+</div>

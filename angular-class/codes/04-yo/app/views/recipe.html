@@ -1,0 +1,18 @@
+<div class="row" id="main-view">
+  <ebi-recipe ng-model="recipe">
+    <div class="col-xs-12">
+      <h2>Ingredients</h2>
+      <p ng-repeat="ingredient in recipe.recipeIngredients">
+        {{ingredient.amount}} {{ingredient.amountType}} {{ingredient.ingredient.name}}
+      </p>
+    </div>
+
+    <div class="col-xs-12">
+      <h2>Instructions</h2>
+      <p ng-repeat="instruction in recipe.recipeInstructions">
+        {{instruction.recipeInstructionID}}. {{instruction.instructionText}}
+      </p>
+    </div>
+  </ebi-recipe>
+
+</div>
